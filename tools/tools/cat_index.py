@@ -10,7 +10,7 @@ cat_index_tool = (Tool().name("CatIndexTool")
                   .argument("index",
                             ArgumentType.OPTIONAL,
                             "index is a comma-delimited list of one or more indices to get information from "
-                            "(default is an empty list meaning all indices)",
+                            "(default is an empty list meaning all indices).",
                             default_value=[])
                   .argument("local",
                             ArgumentType.OPTIONAL,

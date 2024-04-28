@@ -1,6 +1,7 @@
 import os
 import json
 import boto3
+from utils.log import logger
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -37,12 +38,14 @@ class Claude1:
 
 def claud1_response_parser(response):
     response_body = json.loads(response["body"].read())
+    logger.debug_info(response_body)
     completion = response_body["completion"]
     return completion
 
 
 def haiku_response_parser(response):
     response_body = json.loads(response.get("body").read())
+    logger.debug_info(response_body)
     results = response_body.get("content")[0].get("text")
     return results
 
